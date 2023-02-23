@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Type</th>
+            <th scope="col">Prijs (euro)</th>
+            <th scope="col">Kleur</th>
+            <th scope="col">Gewicht</th>
+            <th scope="col">Voorraad</th>
+            <th scope="col">Wegenbelasting</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ auto.model }}</td>
+                <td>{{ auto.type }}</td>
+                <td>&euro; {{ auto.prijs }}</td>
+                <td>{{ auto.kleur }}</td>
+                <td>{{ auto.gewicht }}</td>
+                <td>{{ auto.voorraad }}</td>
+                <td>&euro; {{ belasting }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="/" class="mt-4">HOME</a>
+{% endblock %}

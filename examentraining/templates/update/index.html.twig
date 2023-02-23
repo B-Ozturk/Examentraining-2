@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Model</th>
+            <th scope="col">Type</th>
+            <th scope="col">Prijs (euro)</th>
+            <th scope="col">Voorraad</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ auto.model }}</td>
+            <td>{{ auto.type }}</td>
+            {{ form_start(car_form) }}
+            <td>{{ form_row(car_form.prijs) }}</td>
+            <td>{{ form_row(car_form.voorraad) }}</td>
+            <td>
+                <div class="form-group">
+                    <input class="btn btn-warning border-dark text-dark" type="submit" value="Wijzigen">
+                </div>
+            </td>
+            {{ form_end(car_form) }}
+        </tr>
+        </tbody>
+    </table>
+    <a href="/" class="mt-4">HOME</a>
+{% endblock %}

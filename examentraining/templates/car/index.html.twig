@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Model</th>
+            <th scope="col">Type</th>
+            <th scope="col">Prijs (euro)</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% set count = 1 %}
+        {% for auto in autos %}
+            <tr>
+                <td>{{ count }}</td>
+                <td>{{ auto.model }}</td>
+                <td>{{ auto.type }}</td>
+                <td>&euro; {{ auto.prijs }}</td>
+                <td><a href="{{ path("app_detail", {id: auto.id}) }}" class="mx-3">DETAIL</a>
+                    <a href="{{ path("app_update", {id: auto.id}) }}" class="mx-3">UPDATE</a>
+                    <a href="{{ path("app_delete", {id: auto.id}) }}" class="mx-3">DELETE</a>
+                </td>
+            </tr>
+        {% set count = count + 1 %}
+        {% endfor %}
+        </tbody>
+    </table>
+    <a href="/insert" class="mt-4">INSERT</a>
+{% endblock %}
